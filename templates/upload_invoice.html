@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Ανέβασμα Τιμολογίου{% endblock %}
+{% block content %}
+<h1 class="mb-4">Ανέβασμα Τιμολογίου</h1>
+<form method="POST" action="/upload_invoice" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="file" class="form-label">Επιλέξτε αρχείο:</label>
+        <input type="file" name="file" id="file" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-success">Ανέβασμα</button>
+</form>
+{% endblock %}

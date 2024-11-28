@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Σύνδεση{% endblock %}
+{% block content %}
+<h1 class="mb-4">Σύνδεση</h1>
+<form method="POST" action="/login">
+    <div class="mb-3">
+        <label for="username" class="form-label">Όνομα Χρήστη:</label>
+        <input type="text" name="username" id="username" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Κωδικός:</label>
+        <input type="password" name="password" id="password" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Σύνδεση</button>
+</form>
+<p>Δεν έχετε λογαριασμό; <a href="/register">Εγγραφή</a></p>
+{% endblock %}

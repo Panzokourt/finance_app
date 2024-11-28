@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Περίληψη ΦΠΑ{% endblock %}
+{% block content %}
+<h1 class="mb-4">Περίληψη ΦΠΑ</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Συνολικό ΦΠΑ Εισροών</th>
+            <th>Συνολικό ΦΠΑ Εκροών</th>
+            <th>Υποχρεωτικό ΦΠΑ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ vat_in }}</td>
+            <td>{{ vat_out }}</td>
+            <td>{{ vat_due }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

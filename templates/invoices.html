@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Τιμολόγια{% endblock %}
+{% block content %}
+<h1 class="mb-4">Τιμολόγια</h1>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Όνομα Αρχείου</th>
+            <th>Ημερομηνία Ανέβασματος</th>
+            <th>Ενέργειες</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for invoice in invoices %}
+        <tr>
+            <td>{{ invoice.id }}</td>
+            <td>{{ invoice.file_name }}</td>
+            <td>{{ invoice.upload_date.strftime('%Y-%m-%d') }}</td>
+            <td>
+                <a href="/uploads/{{ invoice.file_name }}" target="_blank" class="btn btn-info btn-sm">Προβολή</a>
+                <form method="POST" action="/delete_invoice/{{ invoice.id }}" style="display:inline;">
+                    <button type="submit" class="btn btn-danger btn-sm">Διαγραφή</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

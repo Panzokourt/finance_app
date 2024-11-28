@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Καταχώρηση Συναλλαγής{% endblock %}
+{% block content %}
+<h1 class="mb-4">Καταχώρηση Συναλλαγής</h1>
+<form method="POST" action="/add_transaction">
+    <div class="mb-3">
+        <label for="type" class="form-label">Τύπος:</label>
+        <select name="type" id="type" class="form-select" required>
+            <option value="income">Έσοδο</option>
+            <option value="expense">Έξοδο</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="amount" class="form-label">Ποσό:</label>
+        <input type="number" name="amount" id="amount" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="vat" class="form-label">ΦΠΑ:</label>
+        <input type="number" name="vat" id="vat" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Περιγραφή:</label>
+        <textarea name="description" id="description" class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="date" class="form-label">Ημερομηνία:</label>
+        <input type="date" name="date" id="date" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Καταχώρηση</button>
+</form>
+{% endblock %}
